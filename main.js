@@ -1,0 +1,21 @@
+
+
+function price() {
+  fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+    .then(response => response.json())
+    .then(data => {
+        const ethEl = document.getElementById("Eth");
+        if(ethEl) {
+          ethEl.innerHTML = `1 ETH = ${data.USD} USD`;
+        }
+    })
+    .catch(error => console.log(error));
+}
+setInterval(price, 500);
+
+
+
+document.getElementById("ethBtn").addEventListener("click", function() {
+    window.location.href = "./ethChart.html";
+  });
+  
