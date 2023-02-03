@@ -35,5 +35,4 @@ const updatePrice = async () => {
     }
 };
 
-// Call updatePrice() every 5 seconds
 setInterval(updatePrice, 5000);
