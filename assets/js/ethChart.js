@@ -35,4 +35,4 @@ const updatePrice = async () => {
     }
 };
 
-setInterval(updatePrice, 5000);
+updatePrice();
