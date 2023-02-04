@@ -21,8 +21,6 @@ nav div a {
   font-size: 20px;
 }
 
-
-
 i {
   cursor: pointer;
 }
@@ -38,6 +36,7 @@ table {
   margin-top: 8.5rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8rem;
   width: 75%;
 }
 

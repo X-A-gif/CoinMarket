@@ -18,4 +18,3 @@ setInterval(price, 500);
 document.getElementById("ethBtn").addEventListener("click", function() {
     window.location.href = "./ethChart.html";
   });
-  
