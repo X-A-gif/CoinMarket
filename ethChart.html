@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/ethChart.css">
     <title>Document</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <style>
+        #newsReel {
+            margin-top: -27rem;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -22,11 +30,29 @@
         </div>
       </nav>
 
-      <div class="chart-container"  style="width: 800px; height: 450px;">
+      <div class="chart-container" style="width: 800px; height: 450px;">
         <canvas id="eth-chart"></canvas>
       </div>
 
+      <div class="row" id="newsReel">
+        <div class="col s12 m4 right">
+          <div class="card">
+            <h4>Top News</h4>
+          <!--  <div class="card-image">-->
+            <!-- <img class="image" src="#" target="_blank">--> 
+          <!--   </div> -->
+          <!--  <div class="card-content">-->
+          <!--  <h5 class="headline"></h5>-->
+         <!--   <p class="description"></p> -->
 
+           <!-- <div class="card-action">-->
+           <!--   <a class="link" href="#">Read More</a>-->
+           <!-- </div> -->
+          </div>
+        </div>
+      </div>
+
+      <script src="./assets/js/news.js"></script>
     <script src="./assets/js/ethChart.js"></script>
 </body>
 </html>
