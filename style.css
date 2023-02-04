@@ -1,28 +1,43 @@
 body {
   margin: 0;
   padding: 0;
-   background-color: #a2a7b1;
+  background: rgb(41,47,47);
+  background: linear-gradient(90deg, rgba(41,47,47,1) 13%, rgba(10,11,11,1) 88%);
+  color: aliceblue;
+}
+
+nav {
+  background-color: #222531;
+}
+
+nav div ul li a {
+  margin-right: 15.5rem;
 }
 
 nav div a {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-left: 15.6rem;
   height: 15px;
-  margin-left: 10rem;
+  font-size: 20px;
 }
 
-#btc {
-  margin-top: 2.5rem;
-  margin-left: 10.8rem;
+i {
+  cursor: pointer;
 }
 
-#tabs {
-  color: green;
+h5 {
+  margin-left: 15.6rem;
+  margin-top: 5rem;
+  margin-bottom: -4rem;
 }
 
-#tabs ul {
-  margin-left: 12rem;
+table {
+  background-color: #222531;
+  margin-top: 8.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8rem;
+  width: 75%;
 }
 
 #tabs-1 p {
