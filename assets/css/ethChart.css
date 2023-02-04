@@ -3,3 +3,28 @@ canvas {
     width: 100px;
     height: 100px;
 }
+
+nav {
+    background-color: #222531;
+  }
+  
+  nav div ul li a {
+    margin-right: 15.5rem;
+  }
+  
+  nav div a {
+    display: flex;
+    margin-left: 15.6rem;
+    height: 15px;
+    font-size: 20px;
+  }
+  
+  i {
+    cursor: pointer;
+  }
+
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
