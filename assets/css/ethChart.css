@@ -23,8 +23,4 @@ nav {
     cursor: pointer;
   }
 
-  .chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  
