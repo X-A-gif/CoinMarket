@@ -9,7 +9,7 @@ function price() {
       const coinID = document.getElementsByClassName("coinID");
       const coinPrice = document.getElementsByClassName("coinPrice");
       for (let i = 0; i < coinID.length; i++) {
-        coinID[i].innerHTML = `${coinData[i].CoinInfo.Name}`;
+        coinID[i].innerHTML = `${coinData[i].CoinInfo.FullName}`;
         // coinPrice[i].innerHTML =  `${coinData[i].RAW.USD.PRICE}`;
        
       }
@@ -20,6 +20,9 @@ setInterval(price, 1000);
 
 
 
-document.getElementsByClassName("coinBtn").addEventListener("click", function() {
+const coinIdEls = document.getElementsByClassName("coinID");
+for (let i = 0; i < coinIdEls.length; i++) {
+  coinIdEls[i].addEventListener("click", function() {
     window.location.href = "./assets/ethChart.html";
   });
+}
