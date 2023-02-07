@@ -1,24 +1,26 @@
-
-
 function price() {
- fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+  fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD')
     .then(response => response.json())
     .then(data => {
-<<<<<<< HEAD
-        const ethEl = document.getElementById("Eth");
-        if(ethEl) {
-          ethEl.innerHTML = `1 ETH = ${data.USD} USD`;
-        }
-    })
-    .catch(error => console.log(error));
-=======
-      console.log(data);
+      //console.log(data);
       const coinData = data.Data;
       const coinID = document.getElementsByClassName("coinID");
-      const coinPrice = document.getElementsByClassName("coinPrice");
+      const coinPrice = document.getElementsByClassName("CoinPrice");
+      const hrChange = document.getElementsByClassName("hourChange");
+      const mktCap = document.getElementsByClassName("mktCap")
       for (let i = 0; i < coinID.length; i++) {
         coinID[i].innerHTML = `${coinData[i].CoinInfo.FullName}`;
-        // coinPrice[i].innerHTML =  `${coinData[i].RAW.USD.PRICE}`;
+        coinPrice[i].innerHTML =  `${coinData[i].DISPLAY.USD.PRICE}`;
+        var getChange24 = `${coinData[i].DISPLAY.USD.CHANGEPCT24HOUR}`
+        getChange24 = getChange24.charAt(0)
+        if(getChange24 === "-"){
+          hrChange[i].style.color = "red"
+        }
+        else{
+          hrChange[i].style.color = "green"
+        }
+        hrChange[i].innerHTML = `${coinData[i].DISPLAY.USD.CHANGEPCT24HOUR}`
+        mktCap[i].innerHTML = `${coinData[i].DISPLAY.USD.MKTCAP}`
        
       }
   })
@@ -36,7 +38,6 @@ export function updateApiUrl() {
 
     });
   }
->>>>>>> 89efd245fc356c3ee3d48ed96570756c03537bed
 }
 
 
@@ -44,6 +45,7 @@ export function updateApiUrl() {
 const coinIdEls = document.getElementsByClassName("coinID");
 for (let i = 0; i < coinIdEls.length; i++) {
   coinIdEls[i].addEventListener("click", function() {
-    window.location.href = "./assets/ethChart.html";
+    //window.location.href = "./assets/ethChart.html";
+    window.location.href = "./assets/ethChart.html?q=" + coinIdEls[i].textContent;
   });
 }
