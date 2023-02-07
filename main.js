@@ -18,6 +18,18 @@ function price() {
 }
 setInterval(price, 1000);
 
+export function updateApiUrl() {
+  const cryptoLinks = document.querySelectorAll('.coinId');
+  for (let i = 0; i < cryptoLinks.length; i++) {
+    const link = cryptoLinks[i];
+    link.addEventListener('click', function() {
+      const symbol = this.getAttribute('data-symbol');
+      const apiUrl = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + symbol + "&tsym=USD&limit=7&toTs=$";
+
+    });
+  }
+}
+
 
 
 const coinIdEls = document.getElementsByClassName("coinID");
