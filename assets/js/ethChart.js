@@ -1,3 +1,7 @@
+
+
+
+
 const ctx = document.getElementById('eth-chart').getContext('2d');
 const chart = new Chart(ctx, {
     type: 'bar',
