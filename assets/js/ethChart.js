@@ -46,6 +46,7 @@ const updatePrice = async () => {
         oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
         const response = await fetch(`https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + variable + "&tsym=USD&limit=7&toTs={Math.floor(oneWeekAgo / 1000)}`);
         const data = await response.json();
+        console.log(data);
         chart.data.labels = data.Data.Data.map(day => new Date(day.time * 1000).toLocaleDateString());
         chart.data.datasets[0].data = data.Data.Data.map(day => day.close);
         chart.update();
