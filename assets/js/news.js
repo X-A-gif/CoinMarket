@@ -17,7 +17,7 @@ function searchApi(query) {
       })
       .then(function (newsData) {
         // write query to page so user knows what they are viewing
-        console.log(newsData)
+        //console.log(newsData)
         displayNews(newsData)
 
       })
