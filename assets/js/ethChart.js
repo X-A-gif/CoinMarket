@@ -49,7 +49,7 @@ function displayCoin() {
   
       document.getElementById("coin-name").innerHTML = coinName;
       document.getElementById("coin-price").innerHTML = coinPrice;
-      document.getElementById("coin-mkt-cap").innerHTML = coinMktCap;
+      document.getElementById("coin-mktCap").innerHTML = coinMktCap;
       document.getElementById("coin-supply").innerHTML = coinSupply;
     }
   }
