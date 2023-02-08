@@ -71,10 +71,19 @@ function price() {
         tableCoinPrice.innerHTML = coinData[i].RAW.USD.PRICE
         tableRow.appendChild(tableCoinPrice);
 
-        tableHour.innerHTML = "%"
+        var getChange24 =  coinData[i].DISPLAY.USD.CHANGEPCT24HOUR
+        getChange24 = getChange24.charAt(0)
+        if(getChange24 === "-"){
+          tableHour.style.color = "red"
+        }
+        else{
+          tableHour.style.color = "green"
+        }
+
+        tableHour.innerHTML = coinData[i].DISPLAY.USD.CHANGEPCT24HOUR + "%";
         tableRow.appendChild(tableHour);
 
-        tableMktCap.innerHTML = "$"
+        tableMktCap.innerHTML = coinData[i].DISPLAY.USD.MKTCAP
         tableRow.appendChild(tableMktCap);
 
         
