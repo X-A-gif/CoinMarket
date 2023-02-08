@@ -1,5 +1,10 @@
 var tableBody = document.querySelector("tbody");
 
+function setCoin(event) {
+  console.log(event.currentTarget.getAttribute("data-fn"));
+  debugger
+}
+
 function price() {
   fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD')
     .then(response => response.json())
@@ -45,6 +50,7 @@ function price() {
         tableNameAnchor.setAttribute("data-fn", coinData[i].CoinInfo.FullName);
         tableNameAnchor.setAttributeNode(classAtt);
         tableNameAnchor.setAttribute("class", "coinLink");
+        tableNameAnchor.addEventListener("click", setCoin);
         tableCoinName.appendChild(tableNameAnchor);
         tableRow.appendChild(tableCoinName);
 
