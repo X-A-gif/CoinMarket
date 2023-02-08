@@ -10,7 +10,9 @@ function setCoin(event) {
     "name": targetName,
     "price": targetPrice
   }
-  debugger
+  var coinObjString = JSON.stringify(coinObj);
+  localStorage.setItem("coin", coinObjString)
+
 }
 
 function price() {
