@@ -2,6 +2,14 @@ var tableBody = document.querySelector("tbody");
 
 function setCoin(event) {
   console.log(event.currentTarget.getAttribute("data-fn"));
+  console.log(event.currentTarget.getAttribute("data-price"));
+  var targetName = event.currentTarget.getAttribute("data-fn");
+  var targetPrice = event.currentTarget.getAttribute("data-price");
+
+  var coinObj = {
+    "name": targetName,
+    "price": targetPrice
+  }
   debugger
 }
 
@@ -17,6 +25,7 @@ function price() {
     //   <td class="hourChange">%</td> 
     //   <td class="mktCap">$</td> 
     // </tr>
+    console.log(data)
       const coinData = data.Data;
       const coinID = document.getElementsByClassName("coinID");
       const coinPrice = document.getElementsByClassName("coinPrice");
@@ -33,6 +42,7 @@ function price() {
         var tableMktCap = document.createElement("td");
         var hrefAtt = document.createAttribute("href");
         var fullNameAtt = document.createAttribute("data-fn");
+        var priceAtt = document.createAttribute("data-price");
         var classAtt = document.createAttribute("class");
         
 
@@ -47,7 +57,9 @@ function price() {
         tableNameAnchor.setAttributeNode(hrefAtt);
         tableNameAnchor.setAttribute("href", "./assets/ethChart.html");
         tableNameAnchor.setAttributeNode(fullNameAtt);
+        tableNameAnchor.setAttributeNode(priceAtt);
         tableNameAnchor.setAttribute("data-fn", coinData[i].CoinInfo.FullName);
+        tableNameAnchor.setAttribute("data-price", coinData[i].RAW.USD.PRICE);
         tableNameAnchor.setAttributeNode(classAtt);
         tableNameAnchor.setAttribute("class", "coinLink");
         tableNameAnchor.addEventListener("click", setCoin);
@@ -91,10 +103,10 @@ export function updateApiUrl() {
 
 
 
- const coinIdEls = document.querySelectorAll(".coinLink");
- coinIdEls.addEventListener("click", function(event){
-  console.log(event)
- })
+//  const coinIdEls = document.querySelectorAll(".coinLink");
+//  coinIdEls.addEventListener("click", function(event){
+//   console.log(event)
+//  })
 // console.log(coinIdEls)
 // for (let i = 0; i < coinIdEls.length; i++) {
 //   coinIdEls[i].addEventListener("click", function() {
