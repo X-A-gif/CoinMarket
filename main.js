@@ -3,12 +3,18 @@ var tableBody = document.querySelector("tbody");
 function setCoin(event) {
   console.log(event.currentTarget.getAttribute("data-fn"));
   console.log(event.currentTarget.getAttribute("data-price"));
+  console.log(event.currentTarget.getAttribute("data-mktCap"));
+  console.log(event.currentTarget.getAttribute("data-supply"));
   var targetName = event.currentTarget.getAttribute("data-fn");
   var targetPrice = event.currentTarget.getAttribute("data-price");
+  var targetMktCap = event.currentTarget.getAttribute("data-mktCap");
+  var targetSupply = event.currentTarget.getAttribute("data-supply");
 
   var coinObj = {
     "name": targetName,
-    "price": targetPrice
+    "price": targetPrice,
+    "marketCap": targetMktCap,
+    "supply": targetSupply
   }
   var coinObjString = JSON.stringify(coinObj);
   localStorage.setItem("coin", coinObjString)
@@ -45,6 +51,8 @@ function price() {
         var hrefAtt = document.createAttribute("href");
         var fullNameAtt = document.createAttribute("data-fn");
         var priceAtt = document.createAttribute("data-price");
+        var marketAtt = document.createAttribute("data-mktCap");
+        var coinSupply = document.createAttribute("data-supply");
         var classAtt = document.createAttribute("class");
         
 
@@ -60,8 +68,12 @@ function price() {
         tableNameAnchor.setAttribute("href", "./assets/ethChart.html");
         tableNameAnchor.setAttributeNode(fullNameAtt);
         tableNameAnchor.setAttributeNode(priceAtt);
+        tableNameAnchor.setAttributeNode(marketAtt);
+        tableNameAnchor.setAttributeNode(coinSupply);
         tableNameAnchor.setAttribute("data-fn", coinData[i].CoinInfo.FullName);
         tableNameAnchor.setAttribute("data-price", coinData[i].RAW.USD.PRICE);
+        tableNameAnchor.setAttribute("data-mktCap", coinData[i].RAW.USD.MKTCAP);
+        tableNameAnchor.setAttribute("data-supply", coinData[i].RAW.USD.SUPPLY);
         tableNameAnchor.setAttributeNode(classAtt);
         tableNameAnchor.setAttribute("class", "coinLink");
         tableNameAnchor.addEventListener("click", setCoin);
