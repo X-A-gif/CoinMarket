@@ -5,8 +5,8 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" />
-
+    <link rel="stylesheet" href="./assets/css/ethChart.css" />
+    <link rel="stylesheet" href="./assets/css/watchlist-modal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>BlockChainBroker</title>
@@ -49,56 +49,56 @@
 
         <tbody>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="addCoin">add</i></td>
             <td class="">1</td>
-            <td class="coinID"><a id="ethBtn" >Ethereum</a>
+            <td class="coinID" id="coinName"><a id="ethBtn" >Ethereum</a>
             </td>
             <td id="Eth" class="">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="addCoin">add</i></td>
             <td class="">2</td>
-            <td class=""></td>
+            <td class="coinID" id="coinName">Bitcoin</td>
             <td class="coinID">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add3">add</i></td>
             <td class="">3</td>
             <td class=""></td>
             <td class="coinID">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add4">add</i></td>
             <td class="">4</td>
             <td class=""></td>
             <td class="coinID">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add5">add</i></td>
             <td class="">5</td>
             <td class=""></td>
             <td class="">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add6">add</i></td>
             <td class="">6</td>
             <td class=""></td>
             <td class="">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add7">add</i></td>
             <td class="">7</td>
             <td class=""></td>
             <td class="">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add8">add</i></td>
             <td class="">8</td>
             <td class=""></td>
             <td class="">$</td>
           </tr>
           <tr>
-            <td class="">  <i class="material-icons">add</i></td>
+            <td class="">  <i class="material-icons" id="add9">add</i></td>
             <td class="">9</td>
             <td class=""></td>
             <td class="">$</td>
@@ -178,8 +178,9 @@
 
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
+        <h4 id="watchlist-title">Watchlist</h4>
+       <ul id="watchlist-list">
+       </ul>
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -188,13 +189,13 @@
 
   
  
-    <script type="module" src="/main.js"></script>
+    <!-- <script type="module" src="/main.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      $(document).ready(function(){
-      $('.modal').modal();
-      });
+    <script src="./assets/js/watchlist-modal.js">
+      // $(document).ready(function(){
+      // $('.modal').modal();
+      // });
     </script>
   </body>
 </html>
