@@ -8,7 +8,7 @@ body {
   padding: 0;
   background: rgb(41,47,47);
   background: linear-gradient(90deg, rgba(41,47,47,1) 13%, rgba(10,11,11,1) 88%);
-  color: aliceblue;
+ color: aliceblue;
 }
 
 nav {
@@ -21,17 +21,21 @@ nav div ul li a {
 
 nav div a {
   display: flex;
-  margin-left: 15.6rem;
+  margin-left: 12rem;
   height: 15px;
   font-size: 20px;
 }
 
 #logo {
-  font-family: monoton;
+  margin-top: -3.5rem;
 }
 
 i {
   cursor: pointer;
+}
+
+#wthlist {
+  margin-right: 10rem;
 }
 
 h5 {
