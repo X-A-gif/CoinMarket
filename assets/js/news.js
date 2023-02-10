@@ -58,5 +58,6 @@ function searchApi(query){
   
     }
   
-    var symbol = "ETH";
+    var coin = JSON.parse(localStorage.getItem("coin"));
+    var symbol = coin.symbol;
     searchApi(symbol);

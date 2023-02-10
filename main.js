@@ -9,17 +9,21 @@ function setCoin(event) {
   var targetPrice = event.currentTarget.getAttribute("data-price");
   var targetMktCap = event.currentTarget.getAttribute("data-mktCap");
   var targetSupply = event.currentTarget.getAttribute("data-supply");
+  var targetSymbol = event.currentTarget.getAttribute("data-symbol");
+
 
   var coinObj = {
     "name": targetName,
     "price": targetPrice,
     "marketCap": targetMktCap,
-    "supply": targetSupply
+    "supply": targetSupply,
+    "symbol": targetSymbol
   }
   var coinObjString = JSON.stringify(coinObj);
   localStorage.setItem("coin", coinObjString)
 
 }
+var  myChart;
 
 function price() {
  fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD')
@@ -53,6 +57,11 @@ function price() {
         var priceAtt = document.createAttribute("data-price");
         var marketAtt = document.createAttribute("data-mktCap");
         var coinSupply = document.createAttribute("data-supply");
+        var SevenDays = document.createElement("td");
+        var canvasDiv = document.createElement("div")
+        canvasDiv.style.height = "100px"
+        canvasDiv.style.width = "300px"
+        //var canvas=  document.createElement("canvas");
         var classAtt = document.createAttribute("class");
         
 
@@ -74,6 +83,8 @@ function price() {
         tableNameAnchor.setAttribute("data-price", coinData[i].RAW.USD.PRICE);
         tableNameAnchor.setAttribute("data-mktCap", coinData[i].RAW.USD.MKTCAP);
         tableNameAnchor.setAttribute("data-supply", coinData[i].RAW.USD.SUPPLY);
+        tableNameAnchor.setAttribute("data-symbol", coinData[i].RAW.USD.FROMSYMBOL);
+
         tableNameAnchor.setAttributeNode(classAtt);
         tableNameAnchor.setAttribute("class", "coinLink");
         tableNameAnchor.addEventListener("click", setCoin);
@@ -97,6 +108,29 @@ function price() {
 
         tableMktCap.innerHTML = coinData[i].DISPLAY.USD.MKTCAP
         tableRow.appendChild(tableMktCap);
+       
+        tableRow.appendChild(SevenDays);
+        //canvas.style.height = '100px';
+        //canvas.style.width = '100px';
+        //canvas.setAttribute("id", "myChart")
+        
+        SevenDays.appendChild(canvasDiv)
+        canvasDiv.innerHTML = "<canvas class='myChart'></canvas>"
+        //var ch;
+        //getChart(ch);
+        if(myChart != undefined){
+          //myChart.destroy()
+         
+        }
+
+        myChart = getChart();
+
+       // myChart.destroy()
+        
+        
+        
+        
+        
 
         
         tableBody.appendChild(tableRow);
@@ -123,6 +157,31 @@ export function updateApiUrl() {
     });
   }
 }
+
+var  myChart;
+
+function getChart(){
+ 
+var ctx = document.getElementsByClassName("myChart")
+
+ var myLineChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [{
+      label: "Total Volume Locked",
+      data: [0, 10, 5, 2, 20, 30, 45],
+      backgroundColor: '#9BD0F5',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    }]
+  },
+
+});
+  return myLineChart
+}
+
+
 
 
 
