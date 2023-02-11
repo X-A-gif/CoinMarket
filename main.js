@@ -33,11 +33,11 @@ function price() {
 
     console.log(data)
       const coinData = data.Data;
-      const coinID = document.getElementsByClassName("coinID");
-      const coinPrice = document.getElementsByClassName("coinPrice");
+
       for (let i = 0; i < 20; i++) {
         
         var tableRow = document.createElement("tr");
+
         var tableIconHolder = document.createElement("td");
         var addIcon = document.createElement("i");
 
@@ -48,12 +48,17 @@ function price() {
         var tableCoinPrice = document.createElement("td");
         var tableHour = document.createElement("td");
         var tableMktCap = document.createElement("td");
+        var tableSupply = document.createElement("td");
+        var tableVol = document.createElement("td");
+
         var hrefAtt = document.createAttribute("href");
         
         var fullNameAtt = document.createAttribute("data-fn");
         var priceAtt = document.createAttribute("data-price");
         var marketAtt = document.createAttribute("data-mktCap");
         var coinSupply = document.createAttribute("data-supply");
+        var coinSupply = document.createAttribute("data-vovl");
+
         var classAtt = document.createAttribute("class");
 
         var SevenDays = document.createElement("td");
@@ -77,17 +82,20 @@ function price() {
         tableNameAnchor.setAttributeNode(marketAtt);
         tableNameAnchor.setAttributeNode(coinSupply);
         
+        
         tableNameAnchor.setAttribute("data-fn", coinData[i].CoinInfo.FullName);
         tableNameAnchor.setAttribute("data-price", coinData[i].RAW.USD.PRICE);
         tableNameAnchor.setAttribute("data-mktCap", coinData[i].RAW.USD.MKTCAP);
         tableNameAnchor.setAttribute("data-supply", coinData[i].RAW.USD.SUPPLY);
         tableNameAnchor.setAttribute("data-symbol", coinData[i].RAW.USD.FROMSYMBOL);
+        tableNameAnchor.setAttribute("data-vol", coinData[i].RAW.USD.TOTALVOLUME24H);
 
         tableNameAnchor.setAttributeNode(classAtt);
         tableNameAnchor.setAttribute("class", "coinLink");
         tableNameAnchor.addEventListener("click", setCoin);
         tableCoinName.appendChild(tableNameAnchor);
         tableRow.appendChild(tableCoinName);
+       
 
         tableCoinPrice.innerHTML = coinData[i].RAW.USD.PRICE
         tableRow.appendChild(tableCoinPrice);
@@ -103,15 +111,24 @@ function price() {
 
         tableHour.innerHTML = coinData[i].DISPLAY.USD.CHANGEPCT24HOUR + "%";
         tableRow.appendChild(tableHour);
-
-        tableMktCap.innerHTML = coinData[i].DISPLAY.USD.MKTCAP
+        
         tableRow.appendChild(tableMktCap);
+        tableMktCap.innerHTML = coinData[i].DISPLAY.USD.MKTCAP
+
+        tableRow.appendChild(tableSupply);
+        tableSupply.textContent = coinData[i].DISPLAY.USD.SUPPLY
+
+        tableRow.appendChild(tableVol);
+        tableVol.textContent = coinData[i].DISPLAY.USD.TOTALVOLUME24H
+
 
         var canvas=  document.createElement("canvas");
 
         tableRow.appendChild(SevenDays);
         canvas.style.height = '100px';
         canvas.style.width = '300px';
+        canvas.style.margin = '0px';
+
         canvas.setAttribute("class", "myChart")
 
         SevenDays.appendChild(canvasDiv)
