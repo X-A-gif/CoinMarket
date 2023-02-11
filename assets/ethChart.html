@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./css/ethChart.css">
-    <title>Document</title>
+    <title>Coin Data</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
@@ -56,12 +56,9 @@
       
                 
 
-      <div class="chart-container" style="width: 800px; height: 450px;">
-        <!-- <div class="coin-name"></div>
-        <div class="coin-cost"></div>
-        <div class="market-cap"></div>
-        <div class="circulating-supply"></div> -->
-        <canvas id="eth-chart"></canvas>
+       <div id="chart_div" style="width: 800px; height: 450px;"> 
+
+        <!-- <canvas id="eth-chart"></canvas> -->
       </div>
 
       <div class="row" id="newsReel">
@@ -81,6 +78,12 @@
           </div>
         </div>
       </div>
+      <!-- <div id="chart_div" style="width: 900px; height: 500px;"></div> -->
+    <!-- <div id="chart_div" style="width: 900px; height: 500px;" class="left"></div> -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
 
       <script src="./js/news.js"></script>
     <script type="module" src="./js/ethChart.js"></script>
