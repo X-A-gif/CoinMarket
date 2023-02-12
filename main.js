@@ -26,6 +26,17 @@ function setCoin(event) {
 }
 var  myChart;
 
+function setWatch (coinName) {
+  var favoritedCoins = JSON.parse(localStorage.getItem("allFavorites"));
+  if(favoritedCoins === null) favoritedCoins=[];
+  var watchList = {
+    name: coinName
+  };
+  localStorage.setItem("watch", JSON.stringify(watchList))
+  favoritedCoins.push(watchList)
+  localStorage.setItem("allFavorites", JSON.stringify(favoritedCoins))
+}
+
 function price() {
  fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD')
     .then(response => response.json())
@@ -39,6 +50,7 @@ function price() {
         var tableRow = document.createElement("tr");
 
         var tableIconHolder = document.createElement("td");
+        var addButton = document.createElement("button");
         var addIcon = document.createElement("i");
 
         var tableIndex = document.createElement("td");
@@ -70,13 +82,19 @@ function price() {
         tableIconHolder.appendChild(addIcon);
         tableRow.appendChild(tableIconHolder);
 
+        addButton.textContent= "star";
+        addButton.setAttribute("class", "material-icons");
+        tableRow.appendChild(addButton);
+        
+
         tableIndex.textContent = i+1;
         tableRow.appendChild(tableIndex);
         
         tableNameAnchor.innerHTML = coinData[i].CoinInfo.FullName
         tableNameAnchor.setAttributeNode(hrefAtt);
         tableNameAnchor.setAttribute("href", "./assets/ethChart.html");
-
+        addButton.addEventListener("click", setWatch(tableNameAnchor.innerHTML));
+        
         tableNameAnchor.setAttributeNode(fullNameAtt);
         tableNameAnchor.setAttributeNode(priceAtt);
         tableNameAnchor.setAttributeNode(marketAtt);
