@@ -12,13 +12,12 @@ function price() {
  
          var tableIndex = document.createElement("td");
          var tableCoinName = document.createElement("td");
-         var tableNameAnchor = document.createElement("a");
+         var tableNameAnchor = document.createElement("td");
  
          var tableCoinPrice = document.createElement("td");
          var tableHour = document.createElement("td");
          var tableMktCap = document.createElement("td");
-         var tableSupply = document.createElement("td");
-         var tableVol = document.createElement("td");
+
           
          var fullNameAtt = document.createAttribute("data-fn");
          var priceAtt = document.createAttribute("data-price");
