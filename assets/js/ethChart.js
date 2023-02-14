@@ -62,6 +62,19 @@ function getData(){
     ], true);
     
     var options = {
+      backgroundColor:{ fill: '#1a1a1a'},
+      title: '5 DAY CHART',
+      titleTextStyle: { color: 'white' },
+      hAxis: {
+        textStyle: {
+            color: 'white'
+        }
+    },
+    vAxis: {
+      textStyle: {
+          color: 'white'
+      }
+  },
         legend: 'none',
 
         candlestick: {
