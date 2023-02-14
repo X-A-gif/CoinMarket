@@ -12,13 +12,12 @@ function price() {
  
          var tableIndex = document.createElement("td");
          var tableCoinName = document.createElement("td");
-         var tableNameAnchor = document.createElement("a");
+         var tableNameAnchor = document.createElement("td");
  
          var tableCoinPrice = document.createElement("td");
          var tableHour = document.createElement("td");
          var tableMktCap = document.createElement("td");
-         var tableSupply = document.createElement("td");
-         var tableVol = document.createElement("td");
+
           
          var fullNameAtt = document.createAttribute("data-fn");
          var priceAtt = document.createAttribute("data-price");
@@ -46,18 +45,17 @@ function price() {
          tableRow.appendChild(tableCoinName);
         
  
-         tableCoinPrice.innerHTML = coinObj[i].name
+         tableCoinPrice.innerHTML = coinObj[i].price
          tableRow.appendChild(tableCoinPrice);
  
          
-         tableHour.innerHTML = coinObj[i].price
+         tableHour.innerHTML = coinObj[i].supply
          tableRow.appendChild(tableHour);
          
          tableRow.appendChild(tableMktCap);
          tableMktCap.innerHTML = coinObj[i].marketCap
  
-         tableRow.appendChild(tableSupply);
-         tableSupply.textContent = coinObj[i].supply
+   
  
 
          tableBody.appendChild(tableRow);
