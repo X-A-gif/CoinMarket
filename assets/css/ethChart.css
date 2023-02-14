@@ -1,26 +1,43 @@
-canvas {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+  font-family: quicksand;
+  margin: 0;
+  padding: 0;
+  background: rgb(41,47,47);
+  background: linear-gradient(90deg, rgba(41,47,47,1) 13%, rgba(10,11,11,1) 88%);
+  color: aliceblue;
+}
+
+#coinCard {
+  margin: 4rem;
 }
 
 nav {
-    background-color: #222531;
-  }
-  
-  nav div ul li a {
-    margin-right: 15.5rem;
-  }
-  
-  nav div a {
-    display: flex;
-    margin-left: 15.6rem;
-    height: 15px;
-    font-size: 20px;
-  }
-  
-  i {
-    cursor: pointer;
-  }
+  background-color: transparent;
+}
 
+nav div ul li a {
+  margin-right: 15.5rem;
+}
+
+nav div a {
+  display: flex;
+  margin-left: 12rem;
+  height: 15px;
+  font-size: 20px;
+}
+
+#logo {
+  margin-top: -3.5rem;
+}
   
+#nameDiv {
+  
+}
+
+canvas {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
