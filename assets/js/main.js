@@ -53,7 +53,6 @@ function price() {
         var tableRow = document.createElement("tr");
 
         var addButton = document.createElement("button");
-        var addIcon = document.createElement("i");
 
         var tableIndex = document.createElement("td");
         var tableCoinName = document.createElement("td");
