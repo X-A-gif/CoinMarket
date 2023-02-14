@@ -7,9 +7,10 @@ BlockChainBroker is a website that shows the top 20 cryptocurrencies at any give
 
 ## Screenshots
 
-![4cf015ddea639eeede50ae84eae1b10e](https://user-images.githubusercontent.com/109630476/217418249-948323e9-677e-4526-b2b7-16550428cf71.png)
 
-![503cab80f4119912e3bd0e1d891cf1be](https://user-images.githubusercontent.com/109630476/216788640-3e5acbe5-21b8-4fa9-8ea4-37f1d257e0ec.png)
+![0f2011dd31307be550f9f7eed83482d5](https://user-images.githubusercontent.com/109630476/218884743-16da0944-306f-4372-8119-5f838cb42f41.png)
+![1a23b223f460eea59187678bd7d6f8a3](https://user-images.githubusercontent.com/109630476/218884761-9c123ee4-4f98-4fa9-b2df-d512513da10c.png)
+![7337e79ede8838123aa079bc87468309](https://user-images.githubusercontent.com/109630476/218885091-71677c5e-27c8-4455-b5d6-4f489a87a5bd.png)
 
 
 ## Link
