@@ -52,13 +52,13 @@ function price() {
         
         var tableRow = document.createElement("tr");
 
-        var tableIconHolder = document.createElement("td");
         var addButton = document.createElement("button");
         var addIcon = document.createElement("i");
 
         var tableIndex = document.createElement("td");
         var tableCoinName = document.createElement("td");
         var tableNameAnchor = document.createElement("a");
+        var buttonDiv = document.createElement("div");
 
         var tableCoinPrice = document.createElement("td");
         var tableHour = document.createElement("td");
@@ -81,23 +81,21 @@ function price() {
 
         canvasDiv.style.height = "100px"
         canvasDiv.style.width = "300px"
-           
-        tableIconHolder.appendChild(addIcon);
-        tableRow.appendChild(tableIconHolder);
-
+     
         addButton.textContent= "star";
         addButton.setAttribute("class", "material-icons");
-        tableRow.appendChild(addButton);
         
+        tableRow.appendChild(buttonDiv);
+        buttonDiv.appendChild(addButton);
 
         tableIndex.textContent = i+1;
         tableRow.appendChild(tableIndex);
 
         var targetName=coinData[i].CoinInfo.FullName;
-  var targetPrice = coinData[i].RAW.USD.PRICE;
-  var targetMktCap = coinData[i].RAW.USD.MKTCAP;
-  var targetSupply = coinData[i].RAW.USD.SUPPLY;
-  var targetSymbol = coinData[i].RAW.USD.FROMSYMBOL;
+        var targetPrice = coinData[i].RAW.USD.PRICE;
+        var targetMktCap = coinData[i].RAW.USD.MKTCAP;
+        var targetSupply = coinData[i].RAW.USD.SUPPLY;
+        var targetSymbol = coinData[i].RAW.USD.FROMSYMBOL;
 
         let coinObj = {
           "name": targetName,
