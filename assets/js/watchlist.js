@@ -46,18 +46,17 @@ function price() {
          tableRow.appendChild(tableCoinName);
         
  
-         tableCoinPrice.innerHTML = coinObj[i].name
+         tableCoinPrice.innerHTML = coinObj[i].price
          tableRow.appendChild(tableCoinPrice);
  
          
-         tableHour.innerHTML = coinObj[i].price
+         tableHour.innerHTML = coinObj[i].supply
          tableRow.appendChild(tableHour);
          
          tableRow.appendChild(tableMktCap);
          tableMktCap.innerHTML = coinObj[i].marketCap
  
-         tableRow.appendChild(tableSupply);
-         tableSupply.textContent = coinObj[i].supply
+   
  
 
          tableBody.appendChild(tableRow);
