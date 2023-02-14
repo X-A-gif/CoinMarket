@@ -26,6 +26,11 @@ nav div a {
   font-size: 20px;
 }
 
+.material-icons {
+  display: flex;
+  margin-top: 3.2rem;
+}
+
 #logo {
   margin-top: -3.5rem;
 }
