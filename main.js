@@ -30,14 +30,14 @@ var  myChart;
  * @param {coin} coinName the coin object saved to local storage
  */
 function setWatch (coinName) {
+  console.log(coinName);
   var favoritedCoins = JSON.parse(localStorage.getItem("allFavorites"));
   if(favoritedCoins === null) favoritedCoins=[];
-  var watchList = {
-    name: coinName
-  };
-  localStorage.setItem("watch", JSON.stringify(watchList))
-  favoritedCoins.push(watchList)
+  
+  localStorage.setItem("watch", JSON.stringify(coinName))
+  favoritedCoins.push(coinName)
   localStorage.setItem("allFavorites", JSON.stringify(favoritedCoins))
+  console.log(favoritedCoins);
 }
 
 function price() {
