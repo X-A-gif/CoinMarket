@@ -31,9 +31,23 @@ nav div a {
 #logo {
   margin-top: -3.5rem;
 }
+
+#dataContainer {
+  box-sizing: border-box;
+  border-spacing: 0px;
+}
   
-#nameDiv {
-  
+#coinCard {
+  display: grid;
+  grid-template-columns: auto 32% 32%;
+  grid-template-rows: repeat(2, auto);
+  width: 100%;
+  max-width: 1400px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
 }
 
 canvas {
